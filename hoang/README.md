@@ -42,3 +42,4 @@ It could be understood that an operator is a custom k8s controller that uses cus
 ## References
 1. https://developer.ibm.com/series/dive-into-kubernetes-operators/
 2. https://www.magalix.com/blog/creating-custom-kubernetes-operators
+3. https://www.redhat.com/en/blog/operators-over-easy-introduction-kubernetes-operators
