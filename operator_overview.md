@@ -22,7 +22,8 @@ An operatos consist of two parts
 * a controller process: runs in one or more pods.
 
 => Together, they function the same way as the core k8s controllers do. <br>
-=> They set a watch loop that waits for user input, and then starts and stops things to reflect that input
+=> They set a watch loop that waits for user input, and then starts and stops things to reflect that input. <br>
+=> You can control and modify the system the same way k8s runs itself.
 
 
 ## References
