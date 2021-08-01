@@ -16,12 +16,14 @@ state to matchthe requested state, it returns to watch the store, waiting for so
 => This watch-change-watch loop is the central process that all of Kubernetes is based on <br>
 => And, **Operators** are meant for adding new watch-loops to clusters.
 
-
 ## Operators
 An operatos consist of two parts
 * a custom resouce definition (CRD): it contains the data needed to represent whatever functionality the operator is providing.
-(*A custom resource is the API extension mechanism in k8s. A custom resource definition (CRD) defines a CR and lists out all the configuration availabe to users of the operator.*)
+(*A custom resource is the API extension mechanism in k8s. A custom resource definition (CRD) defines a CR and lists out all the configuration availabe to users of the operator.A CRD allows you to extend the Kubernetes API. A CRD needs a Controller to act upon its presence (i.e., CRD instance).Without a controller for your custom resource, then it’s just a stateless object within Kubernetes.*)
 * a controller process: runs in one or more pods.
+
+![crd_controller](https://user-images.githubusercontent.com/12546802/127771536-c8865e3f-7ae4-49a1-bea7-7b6464c29901.png)
+
 
 It could be understood that an operator is a custom k8s controller that uses custom resources (CR) to manage applications and their components. High-level configuration and settings are provided by the user within a CR. The k8s operator translates the high-level directives into the low level actions, based on best practices embedded within the operator's logic. 
 
@@ -31,6 +33,11 @@ It could be understood that an operator is a custom k8s controller that uses cus
 => They set a watch loop that waits for user input, and then starts and stops things to reflect that input. <br>
 => You can control and modify the system the same way k8s runs itself.
 
+## Conventional versus Operator based Deployments
+![conventional_vs_operator](https://user-images.githubusercontent.com/12546802/127771660-94beb894-5141-4afc-9883-5c8a7bc831aa.png)
+
+=> You only need to configure and deploy instances of your operator instead of deployments for various resources <br>
+=> Less error-prone and helps buy consistency by offering you a way to templatize your conventional deployment as well as allow you to develop domain-specific operations (operational knowledge) into your Operator via a controller implementation
 
 ## References
 1. https://developer.ibm.com/series/dive-into-kubernetes-operators/
