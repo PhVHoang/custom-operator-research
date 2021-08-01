@@ -19,12 +19,18 @@ state to matchthe requested state, it returns to watch the store, waiting for so
 ## Operators
 An operatos consist of two parts
 * a custom resouce definition (CRD): it contains the data needed to represent whatever functionality the operator is providing.
+(*A custom resource is the API extension mechanism in k8s. A custom resource definition (CRD) defines a CR and lists out all the configuration availabe to users of the operator.*)
 * a controller process: runs in one or more pods.
 
-=> Together, they function the same way as the core k8s controllers do. <br>
+It could be understood that an operator is a custom k8s controller that uses custom resources (CR) to manage applications and their components. High-level configuration and settings are provided by the user within a CR. The k8s operator translates the high-level directives into the low level actions, based on best practices embedded within the operator's logic. 
+
+
+
+=> They function the same way as the core k8s controllers do. <br>
 => They set a watch loop that waits for user input, and then starts and stops things to reflect that input. <br>
 => You can control and modify the system the same way k8s runs itself.
 
 
 ## References
 1. https://developer.ibm.com/series/dive-into-kubernetes-operators/
+2. https://www.magalix.com/blog/creating-custom-kubernetes-operators
