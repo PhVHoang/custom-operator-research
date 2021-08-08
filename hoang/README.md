@@ -39,6 +39,11 @@ It could be understood that an operator is a custom k8s controller that uses cus
 => You only need to configure and deploy instances of your operator instead of deployments for various resources <br>
 => Less error-prone and helps buy consistency by offering you a way to templatize your conventional deployment as well as allow you to develop domain-specific operations (operational knowledge) into your Operator via a controller implementation
 
+## When to use an operator
+It is important to know that all operators are controllers but not all controllers are operators. For a controller to be considered an operator, it must have application domain knowledge in it to perform automated tasks on behalf of the user (SRE/Ops engineer).
+* Use an operator whenever you need to encapsulate your stateful application business logic controlling everything with Kubernetes API. This allows automation around your application built into the k8s ecosystem.
+* Use an operator whenever you need to build a tool that watches your applications for changes and perform certain SRE/Ops tasks when certain things happen.
+
 ## References
 1. https://developer.ibm.com/series/dive-into-kubernetes-operators/
 2. https://www.magalix.com/blog/creating-custom-kubernetes-operators
